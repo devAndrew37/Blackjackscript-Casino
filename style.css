@@ -1,0 +1,585 @@
+body {
+    font-family: 'Luckiest Guy', cursive;
+    background-color: #1d1d1d;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.game-table-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.table-background {
+  width: 700px; /* or your desired size */
+  height: 500px;
+  background-image: url('/assets/table.avif');
+  background-size: cover;      /* or 'contain' depending on your needs */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;         /* optional: for rounded corners like a table */
+  border: 2px solid #743105; /* optional: for a border around the table */
+}
+
+.data-container,
+.player-container {
+    position: absolute;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.dealer-container {
+    position: absolute;
+    width: 700px; /* Match your .table-background width */
+    height: 80px; /* Adjust as needed */    
+    top: 60px;
+    transform: translateX(-3.5%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.deck-image {
+    position: absolute;
+    right: 60px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2; /* Make sure it's above the cards if needed */
+}
+
+.player-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* center items horizontally */
+    align-items: center; /* vertically center items */
+    gap: 150px;           /* space between items */
+    position: absolute;
+    color: white;
+    left: 55%;
+    transform: translateX(-82%);
+    padding: 8px 16px;
+    border-radius: 8px;
+    top: 390px;
+
+}
+
+.data-container   { top: 230px; }
+.player-container { bottom: 0px; }
+
+.controls {
+    margin-top: 20px;
+    
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #036418;
+    color: white;
+}
+
+.controls button:hover {
+    background-color: #3d2802;
+}
+
+#dealer-hand, #player-hand {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.card {
+    width: 50px;
+    height: 75px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+h3, #message {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+h1, .hand-title, p {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+main {
+ grid-area: main;
+}
+
+.bets-section-item {
+ grid-area: bets;
+ background-color: #036418;
+ padding: 10px;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ text-align: center;
+ align-items: center;
+ width: 400px;
+ right: 200px;
+ position: absolute;
+ transform: translateY(-60%);
+}
+
+#leave-the-casino-button {
+ grid-area: leave;
+ background-color: gold;
+ color: black;
+ text-align: center;
+ align-items: center;
+ padding: 5px;
+ width: 150px;
+ right: 340px;
+ bottom: 170px;
+ position: absolute;
+ font-weight: bold;
+ border-radius: 5px;
+}
+
+#leave-the-casino-button:hover {
+ cursor: pointer;
+ background-color: rgb(224, 191, 0);
+
+}
+
+#allin-bet-button {
+    padding: 5px 15px; 
+    background-color: gold; 
+    color:black
+}
+
+#allin-bet-button:hover {
+  cursor: pointer;
+  background-color: rgb(224, 191, 0);
+}
+
+.my-money-item {
+    grid-area: my-money;
+    background-color: #036418;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    width: 400px;
+    right: 200px;
+    position: absolute;
+    transform: translateY(80%);
+}
+
+.bets-section-item button {
+    background-color: #85bb65;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.bets-section-item button:hover {
+    background-color: #3d2802;
+}
+
+.bets-section-item h3, 
+.bets-section-item p {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    
+}
+
+.my-money-container h3,
+.my-money-container p  {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    
+}
+
+.big-container-game {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+     "main main main bets"
+     "main main main my-money"
+     "main main main leave";
+    align-items: center;
+    justify-content: center;
+}
+
+.bets-section-item button.disabled {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+}
+
+#clear-bet-button {
+    background-color: #cf1515;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#clear-bet-button:hover {
+    background-color: #a00;
+}
+
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    background-color: #1d1d1d;
+    text-align: right;
+    padding: 0px;
+    font-size: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+#developer-info {
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.money-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0; /* Remove gap if you want tighter layout */
+  position: relative;
+  margin-bottom: 15px;
+}
+
+#money-lost-item,
+#money-won-item {
+  width: 200px; /* Reserve enough space for the text */
+  min-height: 1em; /* Prevent collapse when empty */
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#my-money-item {
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+.money-display-container,
+#my-money-item,
+#money-lost-item,
+#money-won-item,
+#current-bet {
+  font-family: 'Roboto Mono', monospace;
+}
+
+#modal-backdrop {    /*blur effect background when popup*/
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2); /* Optional: darken */
+  backdrop-filter: blur(8px);
+  z-index: 999; /* Below your modal */
+  display: none; /* Hidden by default */
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: auto;
+  background: #036418;
+  color: white;
+  border: 1px solid #333;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+#closePopup {
+    display: block;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: smaller;
+    text-align: right;
+}  
+
+.showControlsList {
+    text-decoration: none;
+    list-style: none;
+    font-size: 13px;
+    justify-content: left;
+    text-align: left;           /* Aligns text to the left */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    /* Aligns items to the left */
+    justify-content: center;
+}
+
+.showControlsList li {
+  display: flex;
+  align-items: center;        /* Vertically centers icon and text */
+  margin-bottom: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}   
+
+.key-icon {      
+  display: inline-block;
+  min-width: 22px;
+  padding: 2px 8px;
+  margin-right: 8px;
+  background: #eee;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+  color: #333;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.player-hand-split {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.split-style-left {
+    position: absolute;
+    left: -320px;
+}
+
+.split-style-right {
+    position: absolute;
+    left: 40px;
+}
+
+#modal-backdrop-leave {    /*blur effect background when popup*/
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2); /* Optional: darken */
+  backdrop-filter: blur(8px);
+  z-index: 999; /* Below your modal */
+  display: none; /* Hidden by default */
+}
+
+#popup-leave {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: auto;
+  background: #036418;
+  color: white;
+  border: 1px solid #333;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+#closePopup-leave {
+    display: block;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: smaller;
+    text-align: right;
+}  
+
+#popup-leave input {
+  padding: 10px;
+  margin: 10px;
+}
+
+#popup-leave button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #85bb65;
+    color: white;
+}
+
+#modal-backdrop-records {    /*blur effect background when popup*/
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2); /* Optional: darken */
+  backdrop-filter: blur(8px);
+  z-index: 999; /* Below your modal */
+  display: none; /* Hidden by default */
+}
+
+#popup-records {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  background: #036418;
+  color: white;
+  border: 1px solid #333;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+#closePopup-records {
+    display: block;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: smaller;
+    text-align: right;
+} 
+
+#highscores-list {
+    font-family: 'Courier New', Courier, monospace;
+    list-style: none;
+    counter-reset: list-item;  
+    text-align: left;
+    font-weight: bold;
+    right: 25px;
+    position: relative;
+}
+
+#modal-backdrop-lose {    /*blur effect background when popup*/
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2); /* Optional: darken */
+  backdrop-filter: blur(8px);
+  z-index: 999; /* Below your modal */
+  display: none; /* Hidden by default */
+}
+
+#popup-lose {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: auto;
+  background: #036418;
+  color: white;
+  border: 1px solid #333;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+#popup-lose button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 20px 0 0 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #cf1515;
+    color: white;
+}
+
+#popup-lose h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.record-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  counter-increment: list-item;
+  position: relative;
+  padding-left: 2em; /* Space for the number */
+}
+
+.record-row::before {
+  content: counter(list-item) ".";
+  position: absolute;
+  left: 0;
+  width: 2em;
+  text-align: right;
+  font-family: inherit;
+  color: inherit;
+}
+
+.record-money {
+  position: relative;
+  text-align: right;
+  min-width: 100px; /* Adjust as needed */
+  display: inline-block;
+}
