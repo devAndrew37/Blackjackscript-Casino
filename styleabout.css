@@ -1,0 +1,212 @@
+body {
+    font-family: 'Luckiest Guy', cursive;
+    background-color: #1d1d1d;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.rules-section-item {
+ grid-area: rules;
+ background-color: #036418;
+ padding: 10px;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ text-align: center;
+ align-items: center;
+ width: 100%;
+ max-width: 400px;
+ color: white;
+}
+
+.rules-section-item ol li, .description, .rules-section-item ul li {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.rules-section-item ol li, .rules-section-item ul li {
+    text-align: justify;
+    font-size: 0.9em;
+}
+
+ol, ul {
+    list-style-position: inside;
+    padding: 5px;
+    margin: 5px;
+}
+
+ol li, ul li {
+    padding: 5px 0;
+}
+
+.description {
+    text-align: justify;
+}
+
+.game-table-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.table-background {
+  width: 700px; /* or your desired size */
+  height: 500px;
+  background-image: url('/assets/table.avif');
+  background-size: cover;      /* or 'contain' depending on your needs */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;         /* optional: for rounded corners like a table */
+  border: 2px solid #743105; /* optional: for a border around the table */
+}
+
+.data-container,
+.player-container {
+    position: absolute;
+    color: white;
+    /* Example positions, adjust as needed: */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.dealer-container {
+    position: absolute;
+    width: 700px; /* Match your .table-background width */
+    height: 80px; /* Adjust as needed */    
+    top: 60px;
+    transform: translateX(-3.5%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.deck-image {
+    position: absolute;
+    right: 60px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2; /* Make sure it's above the cards if needed */
+}
+
+.player-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* center items horizontally */
+    align-items: center; /* vertically center items */
+    gap: 150px;           /* space between items */
+    position: absolute;
+    color: white;
+    left: 55%;
+    transform: translateX(-82%);
+    padding: 8px 16px;
+    border-radius: 8px;
+    top: 390px;
+
+}
+
+.data-container   { top: 200px; }
+.player-container { bottom: 0px; }
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #036418;
+    color: white;
+}
+
+.controls button:hover {
+    background-color: #3d2802;
+}
+
+#dealer-hand, #player-hand {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.card {
+    width: 50px;
+    height: 75px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+h3, #message {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+h1, .hand-title, p {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+main {
+ grid-area: main;
+}
+
+.big-container-game {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+     "main main rules";
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    background-color: #1d1d1d;
+    text-align: right;
+    padding: 0px;
+    font-size: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+#developer-info {
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
