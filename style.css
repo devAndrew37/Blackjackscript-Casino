@@ -265,7 +265,7 @@ main {
 
 footer {
     font-family: 'Courier New', Courier, monospace;
-    position: absolute;
+    position: fixed;
     background-color: #1d1d1d;
     text-align: right;
     padding: 0px;
@@ -274,7 +274,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;   
-    width: 100%;
+    width: 100vw;
     left: 0;
     bottom: 0;
 }
@@ -582,4 +582,84 @@ footer a {
   text-align: right;
   min-width: 100px; /* Adjust as needed */
   display: inline-block;
+}
+
+@media (max-width: 600px) {                    /* modo portrait */
+  h1 {
+    font-size: 1.8em !important;
+  }
+  h3, p {
+    font-size: 1em !important;
+  }
+ .big-container-game{
+    display: block !important;
+    margin: 10px auto !important;
+  }
+  .game-table-container {
+    height: 70dvh !important;
+  }
+  .game-main-item {
+    height: 75dvh !important; 
+  }
+  main, .game-table-container, .table-background {
+    position: relative !important;
+    width: 95vw !important;
+    right: 4px !important;
+  }
+  .bets-section-item,
+  .my-money-item,
+  #leave-the-casino-button {
+    position: static !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  .bets-section-item {
+    margin: 15px 0 !important;
+  }
+  .my-money-item {
+    margin: 15px 0 15px 0 !important;
+  }
+  .controls {
+    display: flex !important;
+    margin: 20px 0 20px 0 !important;
+    font-size: 0.9em !important;
+  }
+  .dealer-container {
+    position: relative !important;
+    right: 320px !important;
+    top: -500px !important;
+    transform: none !important;
+  }
+  #dealer-hand {
+    position: relative !important;
+    right: -135px !important;
+  }
+  .player-container {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+    top: -200px !important;
+  }
+  .card {
+    width: 40px !important;
+    height: 60px !important;
+  }
+  .player-hand-title {
+    position: absolute !important;
+    bottom: 0px !important;
+    left: 34vw !important;
+  }
+  footer {
+    font-size: 0.6em !important;
+  }
+  #showControls {
+    display: none !important;
+  }
+  .bet-button {
+    padding: 8px 16px !important;
+    font-size: 0.8em !important;
+  }
 }
