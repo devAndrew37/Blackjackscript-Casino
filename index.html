@@ -33,6 +33,15 @@
     </div>
     <h3 class="player-hand-title">Player's Hand</h3>
 </div>
+ <div class="controls">
+ <button id="start-button" onclick="start()">Start</button>
+ <button id="hit-button" class="hidden">Hit</button>
+ <button id="stand-button" class="hidden">Stand</button>
+ <button id="double-down-button" class="hidden">Double Down</button>
+ <button id="split-button" class="hidden">Split</button>
+ <button id="next-round-button" class="hidden" onclick="start()">Next Round</button>
+ <button id="restart-button" class="hidden" onclick="restart()">Restart</button>
+ </div>
 </main>
 <section class="bets-section-item">
   <div class="bet-container">
@@ -61,15 +70,6 @@
 </section>
  <button id="leave-the-casino-button">Leave the casino</button>
 </div>
- <div class="controls">
- <button id="start-button" onclick="start()">Start</button>
- <button id="hit-button" class="hidden">Hit</button>
- <button id="stand-button" class="hidden">Stand</button>
- <button id="double-down-button" class="hidden">Double Down</button>
- <button id="split-button" class="hidden">Split</button>
- <button id="next-round-button" class="hidden" onclick="start()">Next Round</button>
- <button id="restart-button" class="hidden" onclick="restart()">Restart</button>
- </div>
  <div id="modal-backdrop"></div>
  <div id="popup" style="display: none">
   <a id="closePopup">X</a>
