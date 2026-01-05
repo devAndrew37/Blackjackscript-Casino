@@ -664,6 +664,11 @@ footer a {
     width: 40px !important;
     height: 60px !important;
   }
+  .empty-card {
+    width: 40px !important;
+    height: 60px !important;
+    background-color: transparent !important;
+  }
   .player-hand-title {
     position: absolute !important;
     bottom: 0px !important;

@@ -408,6 +408,7 @@ async function start() {
   shuffleDeck(cards);
   document.getElementById('next-round-button').classList.add('hidden');
   document.getElementById('leave-the-casino-button').classList.add('hidden');
+  document.getElementById('restart-button').classList.add('hidden');
   splitDealerFlag = false;
   dealerValueMessage.innerHTML = ""
   playerValueMessage.innerHTML = "";
@@ -1152,6 +1153,7 @@ document.getElementById('closePopup-records').addEventListener('click', function
 function restart() {
   message.style.color = 'white';
   cards = [...newDeck]; // Reset the deck to the original
+
   stand = false;
   noooSound.pause();
   noooSound.currentTime = 0;
@@ -1162,8 +1164,16 @@ function restart() {
   playerValue2 = 0;
   dealerValue = 0;
   gameActive = false;
-  document.getElementById('player-hand').innerHTML = '';
-  document.getElementById('dealer-hand').innerHTML = '';
+  playerHand.innerHTML = '';
+  dealerHand.innerHTML = '';
+  const emptyCard = document.createElement('img');
+  emptyCard.classList.add('empty-card');
+  emptyCard.src = 'assets/empty-card.png';
+  const emptyCard2 = document.createElement('img');
+  emptyCard2.classList.add('empty-card');
+  emptyCard2.src = 'assets/empty-card.png';
+  playerHand.appendChild(emptyCard);
+  dealerHand.appendChild(emptyCard2);
   document.getElementById('phs-2').innerHTML = '';
   document.getElementById('message').innerHTML = 'Welcome to Blackjack Casino Royale!';
   document.getElementById('player-value').innerHTML = '';
@@ -1192,6 +1202,7 @@ function restart() {
   splitDealerFlag = false;
   document.getElementById('popup-lose').style.display = 'none';
   document.getElementById('modal-backdrop-lose').style.display = 'none';
+
   enableBetButtons();
 }
 
