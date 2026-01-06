@@ -332,6 +332,8 @@ const currentBet = document.getElementById('current-bet');
 const moneyBet = document.getElementById('money-lost-item');
 const playerValueMessage = document.getElementById('player-value');
 const dealerValueMessage = document.getElementById('dealer-value');
+const dealerHandTitle = document.querySelector('.hand-title');
+const playerHandTitle = document.querySelector('.player-hand-title');
 
 let playerHandArray = [];
 let playerHandArray2 = [];
@@ -399,6 +401,8 @@ const calculateHandValue = (hand) => {
 };
 
 async function start() {
+  playerHandTitle.innerHTML = "";
+  dealerHandTitle.innerHTML = "";
   message.style.color = 'white';
   if(betAmount == 0) {
     message.innerHTML = 'Place your bet before starting the game';
@@ -443,6 +447,8 @@ async function start() {
 
   playerHandArray = [card1, card2];
   dealerHandArray = [dealerCard1, dealerCard2];
+  playerHandTitle.innerHTML = "Player's Hand";
+  dealerHandTitle.innerHTML = "Dealer's Hand";
   playerValue = calculateHandValue(playerHandArray);
   dealerValue = calculateHandValue(dealerHandArray);
 
@@ -1153,8 +1159,9 @@ document.getElementById('closePopup-records').addEventListener('click', function
 function restart() {
   message.style.color = 'white';
   cards = [...newDeck]; // Reset the deck to the original
-
   stand = false;
+  playerHandTitle.innerHTML = "";
+  dealerHandTitle.innerHTML = "";
   noooSound.pause();
   noooSound.currentTime = 0;
   playerHandArray = [];

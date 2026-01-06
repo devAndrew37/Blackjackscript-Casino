@@ -157,7 +157,7 @@ main {
  width: 400px;
  right: 200px;
  position: absolute;
- bottom: 500px;
+ transform: translateY(-80%);
 }
 
 #leave-the-casino-button {
@@ -169,7 +169,7 @@ main {
  padding: 5px;
  width: 150px;
  right: 340px;
- bottom: 280px;
+ transform: translateY(650%);
  position: absolute;
  font-weight: bold;
  border-radius: 5px;
@@ -203,7 +203,7 @@ main {
     width: 400px;
     right: 200px;
     position: absolute;
-    bottom: 350px;
+    transform: translateY(40%);
 }
 
 .bets-section-item button {
@@ -598,14 +598,22 @@ footer a {
     font-size: 1em !important;
   }
  .big-container-game{
-    display: block !important;
     margin: 10px auto !important;
+    grid-template-columns: 1fr!important;
+    grid-template-rows: auto auto auto auto auto auto !important;
+    grid-template-areas:
+     "main"
+     "bets"
+     "my-money"
+     "leave";
   }
   .game-table-container {
     height: 70dvh !important;
   }
   .game-main-item {
     height: 75dvh !important; 
+    width: 90vw !important;
+    right: 1vw !important;  
   }
   main, .game-table-container, .table-background {
     position: relative !important;
@@ -614,13 +622,11 @@ footer a {
   }
   .bets-section-item,
   .my-money-item,
-  #leave-the-casino-button,
-  section, .my-money-container,
-  .bet-container {
+  #leave-the-casino-button {
     position: relative !important;
-    right: auto !important;
-    bottom: 0 !important;
-    width: 100% !important;
+    right: 0vw !important;
+    transform: translateY(0%) !important;
+    width: 90vw !important;
     margin: 0 auto !important;
     box-sizing: border-box;
   }
@@ -634,11 +640,11 @@ footer a {
     margin: 20px 0 20px 0 !important;
     font-size: 0.8em !important;
     position: relative !important;
-    bottom: 19dvh !important;
+    bottom: 20dvh !important;
   }
   .controls button {
     margin: 0 5px !important;
-    padding: auto 12px !important;
+    padding: 10px 15px !important;
   }
   .dealer-container {
     position: relative !important;
