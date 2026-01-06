@@ -614,10 +614,12 @@ footer a {
   }
   .bets-section-item,
   .my-money-item,
-  #leave-the-casino-button {
+  #leave-the-casino-button,
+  section, .my-money-container,
+  .bet-container {
     position: relative !important;
     right: auto !important;
-    transform: none !important;
+    transform: translate(0, 0) !important;
     width: 100% !important;
     margin: 0 auto !important;
     box-sizing: border-box;
@@ -671,7 +673,7 @@ footer a {
   }
   .player-hand-title {
     position: relative !important;
-    bottom: 170px !important;
+    bottom: 20dvh !important;
     left: 0vw !important;
   }
   footer {
