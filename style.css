@@ -632,7 +632,7 @@ footer a {
     margin: 20px 0 20px 0 !important;
     font-size: 0.8em !important;
     position: relative !important;
-    bottom: 160px !important;
+    bottom: 19dvh !important;
   }
   .controls button {
     margin: 0 5px !important;
