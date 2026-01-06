@@ -615,7 +615,7 @@ footer a {
   .bets-section-item,
   .my-money-item,
   #leave-the-casino-button {
-    position: static !important;
+    position: relative !important;
     right: auto !important;
     transform: none !important;
     width: 100% !important;
@@ -632,7 +632,7 @@ footer a {
     margin: 20px 0 20px 0 !important;
     font-size: 0.8em !important;
     position: relative !important;
-    bottom: 130px !important;
+    bottom: 160px !important;
   }
   .controls button {
     margin: 0 5px !important;
@@ -670,9 +670,9 @@ footer a {
     background-color: transparent !important;
   }
   .player-hand-title {
-    position: absolute !important;
-    bottom: 0px !important;
-    left: 34vw !important;
+    position: relative !important;
+    bottom: 170px !important;
+    left: 0vw !important;
   }
   footer {
     font-size: 0.6em !important;
