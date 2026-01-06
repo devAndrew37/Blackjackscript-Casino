@@ -157,7 +157,7 @@ main {
  width: 400px;
  right: 200px;
  position: absolute;
- transform: translateY(-80%);
+ bottom: 500px;
 }
 
 #leave-the-casino-button {
@@ -169,7 +169,7 @@ main {
  padding: 5px;
  width: 150px;
  right: 340px;
- transform: translateY(650%);
+ bottom: 280px;
  position: absolute;
  font-weight: bold;
  border-radius: 5px;
@@ -203,7 +203,7 @@ main {
     width: 400px;
     right: 200px;
     position: absolute;
-    transform: translateY(40%);
+    bottom: 350px;
 }
 
 .bets-section-item button {
@@ -619,7 +619,7 @@ footer a {
   .bet-container {
     position: relative !important;
     right: auto !important;
-    transform: translate(0, 0) !important;
+    bottom: 0 !important;
     width: 100% !important;
     margin: 0 auto !important;
     box-sizing: border-box;
