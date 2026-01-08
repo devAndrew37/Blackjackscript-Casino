@@ -1168,6 +1168,7 @@ function restart() {
   message.style.color = 'white';
   cards = [...newDeck]; // Reset the deck to the original
   stand = false;
+  unavailableLeaveFlag = false;
   playerHandTitle.innerHTML = "";
   dealerHandTitle.innerHTML = "";
   noooSound.pause();
