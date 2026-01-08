@@ -363,6 +363,7 @@ let youLoseLeftHand = false;
 let youLoseRightHand = false;
 let splitDealerFlag = false;
 let flagLeave = false;
+let unavailableLeaveFlag = false;
 
 document.getElementById('start-button').addEventListener('click', function() {
   if(betAmount > 0) {
@@ -411,7 +412,8 @@ async function start() {
   cards = [...newDeck];
   shuffleDeck(cards);
   document.getElementById('next-round-button').classList.add('hidden');
-  document.getElementById('leave-the-casino-button').classList.add('hidden');
+  document.getElementById('leave-the-casino-button').classList.add('unavailable');
+  unavailableLeaveFlag = true;
   document.getElementById('restart-button').classList.add('hidden');
   splitDealerFlag = false;
   dealerValueMessage.innerHTML = ""
@@ -654,7 +656,8 @@ async function finishRound() {
   document.getElementById('double-down-button').classList.add('hidden');
   document.getElementById('split-button').classList.add('hidden');
   if(myMoney > 0){
-  document.getElementById('leave-the-casino-button').classList.remove('hidden');
+  document.getElementById('leave-the-casino-button').classList.remove('unavailable');
+  unavailableLeaveFlag = false;
   }
   enableBetButtons();
 }
@@ -729,7 +732,8 @@ document.getElementById('hit-button').addEventListener('click', async function()
      myMoneyDisplay.innerHTML = `$${myMoney}`;
     }
     if(myMoney > 0){
-       document.getElementById('leave-the-casino-button').classList.remove('hidden');
+       document.getElementById('leave-the-casino-button').classList.remove('unavailable');
+        unavailableLeaveFlag = false;
     }
     const currentBet = document.getElementById('current-bet');
     currentBet.innerHTML = 0; // Reset current bet  
@@ -932,7 +936,8 @@ function addBet(amount) {
     counterFlag++;
     enableBetButtons();
     if(myMoney <= 0){
-      document.getElementById('leave-the-casino-button').classList.add('hidden');
+      document.getElementById('leave-the-casino-button').classList.add('unavailable');
+      unavailableLeaveFlag = true;
     } 
   }
 }
@@ -959,7 +964,8 @@ function allIn() {
     }, 1000); // Clear the bet message after 0.5 second
   enableBetButtons();
   if(myMoney <= 0){
-    document.getElementById('leave-the-casino-button').classList.add('hidden');
+    document.getElementById('leave-the-casino-button').classList.add('unavailable');
+    unavailableLeaveFlag = true;
   } 
 }
 }
@@ -980,7 +986,8 @@ function clearBet() {
     currentBet.innerHTML = betAmount; // Reset current bet    
     enableBetButtons();
     if(myMoney > 0){
-      document.getElementById('leave-the-casino-button').classList.remove('hidden');
+      document.getElementById('leave-the-casino-button').classList.remove('unavailable');
+      unavailableLeaveFlag = false;
     }
   }
 }
@@ -1096,6 +1103,7 @@ document.getElementById('closePopup').addEventListener('click', function() {
 
 //leave casino and add record
 document.getElementById('leave-the-casino-button').addEventListener('click', function() {
+  if(unavailableLeaveFlag) return;
   if(myMoney > 0){
   flagLeave = true;
   document.getElementById('popup-leave').style.display = 'block';

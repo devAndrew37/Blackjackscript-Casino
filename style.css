@@ -132,6 +132,11 @@ h1 {
     display: none !important;
 }
 
+.unavailable {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
 h3, #message {
     color: #ffffff;
     font-size: 1.2em;
@@ -329,7 +334,7 @@ footer a {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
   z-index: 999; /* Below your modal */
@@ -422,7 +427,7 @@ footer a {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
   z-index: 999; /* Below your modal */
@@ -477,7 +482,7 @@ footer a {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
   z-index: 999; /* Below your modal */
@@ -526,7 +531,7 @@ footer a {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
   z-index: 999; /* Below your modal */
@@ -588,6 +593,10 @@ footer a {
   text-align: right;
   min-width: 100px; /* Adjust as needed */
   display: inline-block;
+}
+
+.img-popup {
+    width: 400px;
 }
 
 @media (max-width: 600px) {                    /* modo portrait */
@@ -694,5 +703,15 @@ footer a {
   }
   #leave-the-casino-button {
     margin: 20px 0 30px 0 !important;
+  }
+  #popup-leave, #popup-lose, #popup-records {
+    width: 85vw !important;
+    border-radius: 10px !important;
+    right: 10px !important;
+    position: relative !important;
+    bottom: 50vh !important;
+  }
+  .img-popup {
+    width: 80vw !important;
   }
 }
