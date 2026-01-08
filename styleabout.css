@@ -187,7 +187,7 @@ main {
 
 footer {
     font-family: 'Courier New', Courier, monospace;
-    position: absolute;
+    position: fixed;
     background-color: #1d1d1d;
     text-align: right;
     padding: 0px;
@@ -209,4 +209,90 @@ footer {
 footer a {
     color: rgb(255, 255, 255);
     text-decoration: none;
+}
+
+
+@media (max-width: 600px) {                    /* modo portrait */
+    h1 {
+    font-size: 1.8em !important;
+    }
+    h3, p {
+    font-size: 1em !important;
+    }
+    .big-container-game {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+         "main"
+         "rules";
+    }
+    .game-table-container {
+    height: 70dvh !important;
+    }
+  .game-main-item {
+    height: 75dvh !important; 
+    width: 90vw !important;
+    right: 1vw !important;  
+  }
+  main, .game-table-container, .table-background {
+    position: relative !important;
+    width: 95vw !important;
+    right: 4px !important;
+  }
+  .rules-section-item {
+    position: relative !important;
+    right: 0vw !important;
+    transform: translateY(0%) !important;
+    width: 90vw !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  .controls {
+    margin: 20px 0 20px 0 !important;
+    font-size: 0.8em !important;
+    position: relative !important;
+    bottom: 20dvh !important;
+  }
+  .controls button {
+    margin: 0 5px !important;
+    padding: 10px 15px !important;
+  }
+  .dealer-container {
+    position: relative !important;
+    right: 320px !important;
+    top: -500px !important;
+    transform: none !important;
+  }
+  #dealer-hand {
+    position: relative !important;
+    right: -135px !important;
+  }
+  #player-hand {
+    left: -5px !important;
+  }
+  .data-container {
+    width: 85% !important;
+  }
+  .player-container {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+    top: -200px !important;
+  }
+  .card {
+    width: 40px !important;
+    height: 60px !important;
+  }
+  .player-hand-title {
+    position: relative !important;
+    bottom: 20dvh !important;
+    left: 0vw !important;
+  }
+    footer {
+    font-size: 0.6em !important;
+  }
+  #developer-info {
+    position: relative !important;
+    right: 8vw !important;
+  }
+
 }
