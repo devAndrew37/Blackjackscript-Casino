@@ -625,19 +625,19 @@ footer a {
   #leave-the-casino-button {
     position: relative !important;
     right: 0vw !important;
-    transform: translateY(0%) !important;
+    transform: translateY(30%) !important;
     width: 90vw !important;
     margin: 0 auto !important;
     box-sizing: border-box;
   }
   .bets-section-item {
-    margin: 60px 0 20px 0 !important;
+    margin: 20px 0 20px 0 !important;
   }
   .my-money-item {
     margin: 15px 0 15px 0 !important;
   }
   .controls {
-    margin: 20px 0 20px 0 !important;
+    margin: 20px 0 80px 0 !important;
     font-size: 0.8em !important;
     position: relative !important;
     bottom: 20vh !important;
@@ -693,6 +693,6 @@ footer a {
     font-size: 0.8em !important;
   }
   #leave-the-casino-button {
-    margin: 10px 0 30px 0 !important;
+    margin: 20px 0 30px 0 !important;
   }
 }
