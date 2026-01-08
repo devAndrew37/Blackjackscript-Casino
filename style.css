@@ -608,10 +608,10 @@ footer a {
      "leave";
   }
   .game-table-container {
-    height: 70dvh !important;
+    height: 70vh !important;
   }
   .game-main-item {
-    height: 75dvh !important; 
+    height: 75vh !important; 
     width: 90vw !important;
     right: 1vw !important;  
   }
@@ -640,7 +640,7 @@ footer a {
     margin: 20px 0 20px 0 !important;
     font-size: 0.8em !important;
     position: relative !important;
-    bottom: 20dvh !important;
+    bottom: 20vh !important;
   }
   .controls button {
     margin: 0 5px !important;
@@ -679,7 +679,7 @@ footer a {
   }
   .player-hand-title {
     position: relative !important;
-    bottom: 20dvh !important;
+    bottom: 20vh !important;
     left: 0vw !important;
   }
   footer {
