@@ -183,13 +183,14 @@ main {
      "main main rules";
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
 }
 
 footer {
     font-family: 'Courier New', Courier, monospace;
     position: fixed;
     background-color: #1d1d1d;
-    text-align: right;
+    text-align: center;
     padding: 0px;
     font-size: 12px;
     color: white;
@@ -204,6 +205,13 @@ footer {
 #developer-info {
     margin-right: 20px;
     font-family: 'Courier New', Courier, monospace;
+}
+
+#return-link {
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative;
+    left: 45vw;
 }
 
 footer a {
@@ -243,15 +251,10 @@ footer a {
     right: 0vw !important;
     transform: translateY(0%) !important;
     width: 90vw !important;
-    margin: 0 auto !important;
+    margin: 50px auto !important;
     box-sizing: border-box;
   }
-  .controls {
-    margin: 20px 0 20px 0 !important;
-    font-size: 0.8em !important;
-    position: relative !important;
-    bottom: 20dvh !important;
-  }
+
   .controls button {
     margin: 0 5px !important;
     padding: 10px 15px !important;
@@ -294,5 +297,8 @@ footer a {
     position: relative !important;
     right: 8vw !important;
   }
+  #return-link {
+    left: 0vw !important;
+}
 
 }
