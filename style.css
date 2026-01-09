@@ -84,7 +84,6 @@ h1 {
 .player-container { bottom: 0px; }
 
 .controls {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
@@ -137,6 +136,10 @@ h1 {
     pointer-events: none;
 }
 
+.empty-title {
+  color: transparent
+}
+
 h3, #message {
     color: #ffffff;
     font-size: 1.2em;
@@ -162,7 +165,21 @@ main {
  width: 400px;
  right: 200px;
  position: absolute;
- transform: translateY(-80%);
+ transform: translateY(50%);
+}
+
+.my-money-item {
+  grid-area: my-money;
+  background-color: #036418;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  align-items: center;
+  width: 400px;
+  right: 200px;
+  position: absolute;
+  transform: translateY(40%);
 }
 
 #leave-the-casino-button {
@@ -174,7 +191,7 @@ main {
  padding: 5px;
  width: 150px;
  right: 340px;
- transform: translateY(650%);
+ transform: translateY(-200%);
  position: absolute;
  font-weight: bold;
  border-radius: 5px;
@@ -195,20 +212,6 @@ main {
 #allin-bet-button:hover {
   cursor: pointer;
   background-color: rgb(224, 191, 0);
-}
-
-.my-money-item {
-    grid-area: my-money;
-    background-color: #036418;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    align-items: center;
-    width: 400px;
-    right: 200px;
-    position: absolute;
-    transform: translateY(40%);
 }
 
 .bets-section-item button {
@@ -251,6 +254,8 @@ main {
      "main main main leave";
     align-items: center;
     justify-content: center;
+    top: 10px;
+    position: relative;
 }
 
 .bets-section-item button.disabled {
@@ -413,14 +418,14 @@ footer a {
     align-items: center;
 }
 
-.split-style-left {
+#player-hand.split-style-left {
     position: absolute;
-    left: -320px;
+    left: -300px;
 }
 
 .split-style-right {
     position: absolute;
-    left: 40px;
+    left: 150px;
 }
 
 #modal-backdrop-leave {    /*blur effect background when popup*/
@@ -634,7 +639,7 @@ footer a {
   #leave-the-casino-button {
     position: relative !important;
     right: 0vw !important;
-    transform: translateY(40%) !important;
+    transform: translateY(20%) !important;
     width: 90vw !important;
     margin: 0 auto !important;
     box-sizing: border-box;
@@ -646,7 +651,7 @@ footer a {
     margin: 15px 0 15px 0 !important;
   }
   .controls {
-    margin: 20px 0 80px 0 !important;
+    margin: 20px 0 40px 0 !important;
     font-size: 0.8em !important;
     position: relative !important;
     bottom: 20vh !important;
@@ -702,7 +707,7 @@ footer a {
     font-size: 0.8em !important;
   }
   #leave-the-casino-button {
-    margin: 30px 0 30px 0 !important;
+    margin: 20px 0 30px 0 !important;
   }
   #popup-leave, #popup-lose, #popup-records {
     width: 85vw !important;
@@ -715,11 +720,71 @@ footer a {
     width: 80vw !important;
   }
   #player-hand.split-style-left {
-    left: -28vw !important;
+    left: 10vw !important;
     gap: 0px !important;
+    position: relative !important;
   }
   .split-style-right {
-    left: 54vw !important;
+    position: relative !important;
+    left: -10vw !important;
     gap: 0px !important;
+  }
+}
+
+@media (max-width: 1200px) and (max-height: 500px) {                    /* modo landscape */
+  h1 {
+    font-size: 1.7em !important;
+  }
+  h3, p {
+    font-size: 0.8em !important;
+  }
+  #showControls {
+    display: none !important;
+  }
+  .card {
+    width: 40px !important;
+    height: 60px !important;
+  }
+ .big-container-game{
+    margin: 10px auto !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr 1fr !important;
+    grid-template-areas:
+     "main bets"
+     "main my-money"
+     "main leave";
+     width: 90vw !important;
+  }
+  .game-main-item, .game-table-container, .table-background {
+    height: 80vh !important; 
+    width: 40vw !important;
+    right: 1vw !important;  
+  }
+  .bets-section-item,
+  .my-money-item,
+  #leave-the-casino-button {
+    position: relative !important;
+    right: 0vw !important;
+    transform: translateY(20%) !important;
+    width: 40vw !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  .bets-section-item {
+    margin: 20px 0 20px 0 !important;
+  }
+  .my-money-item {
+    margin: 15px 0 15px 0 !important;
+  }
+  .controls {
+    margin: 20px 0 40px 0 !important;
+    font-size: 0.8em !important;
+    position: relative !important;
+    bottom: 20vh !important;
+  }
+  .controls button {
+    margin: 0 5px !important;
+    padding: 5px 15px !important;
+    width: auto !important;
   }
 }

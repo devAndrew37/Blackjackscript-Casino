@@ -402,8 +402,8 @@ const calculateHandValue = (hand) => {
 };
 
 async function start() {
-  playerHandTitle.innerHTML = "";
-  dealerHandTitle.innerHTML = "";
+  playerHandTitle.classList.add("empty-title");
+  dealerHandTitle.classList.add("empty-title");
   message.style.color = 'white';
   if(betAmount == 0) {
     message.innerHTML = 'Place your bet before starting the game';
@@ -449,11 +449,10 @@ async function start() {
 
   playerHandArray = [card1, card2];
   dealerHandArray = [dealerCard1, dealerCard2];
-  playerHandTitle.innerHTML = "Player's Hand";
-  dealerHandTitle.innerHTML = "Dealer's Hand";
   playerValue = calculateHandValue(playerHandArray);
   dealerValue = calculateHandValue(dealerHandArray);
-
+  playerHandTitle.classList.remove("empty-title");
+  dealerHandTitle.classList.remove("empty-title");
   message.innerHTML = `Your hand is ${playerValue}. Would you like to hit, stand or double down?`;
   setTimeout(() => {
    document.getElementById('hit-button').classList.remove('hidden');
@@ -1083,7 +1082,7 @@ function checkLose() {
     noooSound.play();
     const img = document.getElementById('img-src');
     const title = document.getElementById('title-src');
-    title.innerHTML = `You fucked up!`;
+    title.innerHTML = `You f*cked up! You owe the casino $${-myMoney}!`;
     img.src = "assets/owethecasino.jpg";
     document.getElementById('popup-lose').style.display = 'block';
     document.getElementById('modal-backdrop-lose').style.display = 'block';      
@@ -1165,12 +1164,12 @@ document.getElementById('closePopup-records').addEventListener('click', function
 });
 
 function restart() {
+  playerHandTitle.classList.add("empty-title");
+  dealerHandTitle.classList.add("empty-title");
   message.style.color = 'white';
   cards = [...newDeck]; // Reset the deck to the original
   stand = false;
   unavailableLeaveFlag = false;
-  playerHandTitle.innerHTML = "";
-  dealerHandTitle.innerHTML = "";
   noooSound.pause();
   noooSound.currentTime = 0;
   playerHandArray = [];
@@ -1218,7 +1217,10 @@ function restart() {
   splitDealerFlag = false;
   document.getElementById('popup-lose').style.display = 'none';
   document.getElementById('modal-backdrop-lose').style.display = 'none';
-
+  const img = document.getElementById('img-src');
+  const title = document.getElementById('title-src');
+  title.innerHTML = `You lost all your money!`;
+  img.src = "assets/cero.jpg";
   enableBetButtons();
 }
 
