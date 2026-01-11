@@ -356,7 +356,7 @@ footer a {
     position: relative !important;
     transform: none !important;
     left: 0 !important;
-    top: -308px !important;
+    top: -79vh !important;
     right: 0 !important;
     width: auto !important;
     height: auto !important;
@@ -380,7 +380,7 @@ footer a {
   }
   .player-hand-title {
     position: relative !important;
-    bottom: 30vh !important;
+    bottom: 110px !important;
     left: 0vw !important;
   }
   footer {
