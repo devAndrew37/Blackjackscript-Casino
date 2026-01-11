@@ -736,7 +736,7 @@ footer a {
     font-size: 1.7em !important;
   }
   h3, p {
-    font-size: 0.8em !important;
+    font-size: 0.7em !important;
   }
   #showControls {
     display: none !important;
@@ -760,12 +760,25 @@ footer a {
     width: 40vw !important;
     right: 1vw !important;  
   }
+  .game-main-item {
+    bottom: 30vh !important;
+    position: relative !important;
+  }
+  .card {
+    width: 30px !important;
+    height: 40px !important;
+  }
+  .empty-card {
+    width: 30px !important;
+    height: 40px !important;
+    background-color: transparent !important;
+  }
   .bets-section-item,
   .my-money-item,
   #leave-the-casino-button {
     position: relative !important;
     right: 0vw !important;
-    transform: translateY(20%) !important;
+    transform: translateY(30%) !important;
     width: 40vw !important;
     margin: 0 auto !important;
     box-sizing: border-box;
@@ -774,17 +787,65 @@ footer a {
     margin: 20px 0 20px 0 !important;
   }
   .my-money-item {
-    margin: 15px 0 15px 0 !important;
+    margin: 0 !important;
+    padding: 10px 0 0 0 !important;
+    transform: translateY(0%) !important;
+  }
+  .money-display-container {
+    font-size: 1.3em !important;
+  }
+  #leave-the-casino-button {
+    margin: 30px 0 30px 0 !important;
+    font-size: 0.7em !important;
+    transform: translateY(-420%) !important;
   }
   .controls {
-    margin: 20px 0 40px 0 !important;
-    font-size: 0.8em !important;
+    margin: 20px 0 20px 0 !important;
+    font-size: 0.75em !important;
     position: relative !important;
-    bottom: 20vh !important;
+    bottom: 40vh !important;
   }
   .controls button {
     margin: 0 5px !important;
     padding: 5px 15px !important;
     width: auto !important;
+  }
+  .bet-button, #allin-bet-button, #clear-bet-button {
+    padding: 8px 16px !important;
+    font-size: 0.7em !important;
+  }
+  .dealer-container {
+    position: relative !important;
+    right: 350px !important;
+    top: -320px !important;
+    transform: none !important;
+  }
+  #dealer-hand {
+    position: relative !important;
+    right: -150px !important;
+  }
+  #player-hand {
+    left: -5px !important;
+  }
+  .data-container {
+    width: 85% !important;
+    top: 150px !important;
+  }
+  .player-container {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+    top: -160px !important;
+  }
+  .player-hand-title {
+    position: relative !important;
+    bottom: 39vh !important;
+    left: 0vw !important;
+  }
+  footer {
+    font-size: 0.6em !important;
+  }
+  #developer-info {
+    margin-right: 90px !important;
   }
 }
