@@ -866,6 +866,18 @@ footer a {
     bottom: 50vh !important;
     font-size: 1em !important;
   }
+  #player-hand.split-style-left {
+    top: 0px !important;
+    left: 3vw !important;
+    gap: 0px !important;
+    position: relative !important;
+  }
+  .split-style-right {
+    top: 0px !important;
+    position: relative !important;
+    left: -4vw !important;
+    gap: 0px !important;
+  }
  .deck-image {
     right: 15px; 
     top: 52px; 
