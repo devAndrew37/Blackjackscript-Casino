@@ -1129,7 +1129,7 @@ document.getElementById('recordButton').addEventListener('click', async function
   const money = myMoney; 
 
   // Send POST request to server
-  const response = await fetch('http://localhost:1000/leavecasino', {
+  const response = await fetch('https://blackjackscript-casino-server-records.onrender.com/leavecasino', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, money })
@@ -1145,7 +1145,7 @@ document.getElementById('recordButton').addEventListener('click', async function
 });
 
 document.getElementById('showRecords').addEventListener('click', async function() {
-fetch('http://localhost:1000/showrecords')
+fetch('https://blackjackscript-casino-server-records.onrender.com/showrecords')
   .then(res => res.json())
   .then(data => {
   const listRecords = document.getElementById('highscores-list');
