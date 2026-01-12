@@ -402,6 +402,7 @@ const calculateHandValue = (hand) => {
 };
 
 async function start() {
+  document.querySelector('.game-table-container').scrollIntoView({ behavior: 'smooth' });
   playerHandTitle.classList.add("empty-title");
   dealerHandTitle.classList.add("empty-title");
   message.style.color = 'white';
@@ -559,6 +560,9 @@ async function finishRound() {
     message.appendChild(message2);   
   } 
   setTimeout(() => {
+    document.querySelector('.my-money-item').scrollIntoView({ behavior: 'smooth' });
+  }, 1000);
+  setTimeout(() => {
     if(myMoney < 0){
       myMoneyNegative = -myMoney;
       myMoneyDisplay.innerHTML = `-$${myMoneyNegative}`;
@@ -568,7 +572,7 @@ async function finishRound() {
     myMoneyDisplay.innerHTML = `$${myMoney}`;
     document.getElementById('my-money').style.color = 'white';
     }
-  }, 2000);  
+  }, 3000);  
   currentBet.innerHTML = 0; // Reset current bet 
   betAmount = 0; // Reset bet amount    
   youLoseLeftHand = false;
@@ -608,10 +612,13 @@ async function finishRound() {
     message.style.color = '#85bb65';
     message.innerHTML = `Player Wins! Nice, you won $${betAmount * 2}!`;
     setTimeout(() => {
+      document.querySelector('.my-money-item').scrollIntoView({ behavior: 'smooth' });
+    }, 1000);
+    setTimeout(() => {
       moneyWon.innerHTML = '';
       myMoneyDisplay.innerHTML = `$${myMoney}`;
       document.getElementById('my-money').style.color = 'white';
-    }, 2000);  // Clear the bet message after 2 seconds
+    }, 3000);  // Clear the bet message after 2 seconds
     currentBet.innerHTML = 0; // Reset current bet  
     betAmount = 0; // Reset bet amount
 

@@ -70,9 +70,8 @@ ol li, ul li {
 .player-container {
     position: absolute;
     color: white;
-    /* Example positions, adjust as needed: */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-52%);
     padding: 8px 16px;
     border-radius: 8px;
 }
@@ -109,7 +108,7 @@ ol li, ul li {
     position: absolute;
     color: white;
     left: 55%;
-    transform: translateX(-82%);
+    transform: translateX(-74%);
     padding: 8px 16px;
     border-radius: 8px;
     top: 390px;
@@ -370,7 +369,7 @@ footer a {
   }
   .data-container {
     width: 85% !important;
-    top: 150px !important;
+    top: 130px !important;
   }
   .player-container {
     position: relative !important;

@@ -739,7 +739,7 @@ footer a {
 @media (max-width: 1200px) and (max-height: 500px) {                    /* modo landscape */
   h1 {
     font-size: 1.6em !important;
-    margin-bottom: 100px !important;
+    margin-bottom: 50px !important;
   }
   h3, p {
     font-size: 0.8em !important;
@@ -810,7 +810,7 @@ footer a {
     margin: 20px 0 20px 0 !important;
     font-size: 0.75em !important;
     position: relative !important;
-    top: -25vh !important;
+    top: -30vh !important;
   }
   .controls button {
     margin: 0 5px !important;
