@@ -1153,7 +1153,10 @@ fetch('https://blackjackscript-casino-server-records.onrender.com/showrecords')
   data.result.forEach(entry => {
     const record = document.createElement('li');
     record.classList.add('record-row'); 
-    record.innerHTML = `${entry.name}...................................`;
+    record.innerHTML = `${entry.name}`;
+    const scoreDots = document.createElement('span');
+    scoreDots.classList.add('score-dots');
+    record.appendChild(scoreDots);
     const recordMoney = document.createElement('span');
     recordMoney.innerHTML = `$${entry.record.toLocaleString('de-DE')}`;
     recordMoney.classList.add('record-money');
