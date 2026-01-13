@@ -1126,13 +1126,13 @@ document.getElementById('closePopup-leave').addEventListener('click', function()
 
 document.getElementById('recordButton').addEventListener('click', async function() {
   const name = document.getElementById('namePlayer').value;
-  const money = myMoney; 
+  const score = myMoney; 
 
   // Send POST request to server
-  const response = await fetch('https://blackjackscript-casino-server-records.onrender.com/leavecasino', {
+  const response = await fetch('https://blackjackscript-casino-server-records.onrender.com/api/record', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, money })
+    body: JSON.stringify({ name, score })
   });
 
   if (response.ok) {
@@ -1145,20 +1145,20 @@ document.getElementById('recordButton').addEventListener('click', async function
 });
 
 document.getElementById('showRecords').addEventListener('click', async function() {
-fetch('https://blackjackscript-casino-server-records.onrender.com/showrecords')
+fetch('https://blackjackscript-casino-server-records.onrender.com/api/records')
   .then(res => res.json())
   .then(data => {
   const listRecords = document.getElementById('highscores-list');
   listRecords.innerHTML = ''; // Clear previous records
-  data.result.forEach(entry => {
+  data.slice(0, 20).forEach(entry => {
     const record = document.createElement('li');
     record.classList.add('record-row'); 
-    record.innerHTML = `${entry.name}`;
+    record.innerHTML = `${entry[0]}`;
     const scoreDots = document.createElement('span');
     scoreDots.classList.add('score-dots');
     record.appendChild(scoreDots);
     const recordMoney = document.createElement('span');
-    recordMoney.innerHTML = `$${entry.record.toLocaleString('de-DE')}`;
+    recordMoney.innerHTML = `${entry[2].toLocaleString('de-DE')}`;
     recordMoney.classList.add('record-money');
     record.appendChild(recordMoney);
     listRecords.appendChild(record);

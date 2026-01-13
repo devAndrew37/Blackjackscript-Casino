@@ -647,13 +647,13 @@ footer a {
   #leave-the-casino-button {
     position: relative !important;
     right: 0vw !important;
-    transform: translateY(40%) !important;
+    transform: translateY(10%) !important;
     width: 90vw !important;
     margin: 0 auto !important;
     box-sizing: border-box;
   }
   .bets-section-item {
-    margin: 20px 0 20px 0 !important;
+    margin: 120px 0 20px 0 !important;
   }
   .my-money-item {
     margin: 15px 0 15px 0 !important;
@@ -662,7 +662,8 @@ footer a {
     margin: 30px 0 20px 0 !important;
     font-size: 0.8em !important;
     position: relative !important;
-    top: -20vh !important;
+    top: -160px !important;
+    z-index: 100 !important;
   }
   .controls button {
     margin: 0 5px !important;
@@ -701,7 +702,7 @@ footer a {
   }
   .player-hand-title {
     position: relative !important;
-    bottom: 20vh !important;
+    bottom: 170px !important;
     left: 0vw !important;
   }
   footer {
@@ -750,6 +751,144 @@ footer a {
   }
 }
 
+@media (max-width: 600px) and (max-height: 700px) {                    /* modo portrait small phone */
+  h1 {
+    font-size: 1.8em !important;
+  }
+  h3, p {
+    font-size: 1em !important;
+  }
+ .big-container-game{
+    margin: 10px auto !important;
+    grid-template-columns: 1fr!important;
+    grid-template-rows: auto auto auto auto auto auto !important;
+    grid-template-areas:
+     "main"
+     "bets"
+     "my-money"
+     "leave";
+  }
+  .game-table-container {
+    height: 70vh !important;
+  }
+  .game-main-item {
+    height: 75vh !important; 
+    width: 90vw !important;
+    right: 1vw !important;  
+  }
+  main, .game-table-container, .table-background {
+    position: relative !important;
+    width: 95vw !important;
+    right: 4px !important;
+  }
+  .bets-section-item,
+  .my-money-item,
+  #leave-the-casino-button {
+    position: relative !important;
+    right: 0vw !important;
+    transform: translateY(40%) !important;
+    width: 90vw !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  .bets-section-item {
+    margin: 190px 0 20px 0 !important;
+  }
+  .my-money-item {
+    margin: 15px 0 15px 0 !important;
+  }
+  .controls {
+    margin: 30px 0 20px 0 !important;
+    font-size: 0.8em !important;
+    position: relative !important;
+    top: -160px !important;
+    z-index: 100 !important;
+  }
+  .controls button {
+    margin: 0 5px !important;
+    padding: 5px 15px !important;
+  }
+  .dealer-container {
+    position: relative !important;
+    right: 320px !important;
+    top: -500px !important;
+    transform: none !important;
+  }
+  #dealer-hand {
+    position: relative !important;
+    right: -135px !important;
+  }
+  #player-hand {
+    left: -5px !important;
+  }
+  .data-container {
+    width: 85% !important;
+  }
+  .player-container {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+    top: -190px !important;
+  }
+  .card {
+    width: 40px !important;
+    height: 60px !important;
+  }
+  .empty-card {
+    width: 40px !important;
+    height: 60px !important;
+    background-color: transparent !important;
+  }
+  .player-hand-title {
+    position: relative !important;
+    bottom: 170px !important;
+    left: 0vw !important;
+  }
+  footer {
+    font-size: 0.6em !important;
+  }
+  #showControls {
+    display: none !important;
+  }
+  .bet-button {
+    padding: 8px 16px !important;
+    font-size: 0.8em !important;
+  }
+  #leave-the-casino-button {
+    margin: 30px 0 30px 0 !important;
+  }
+  #popup-leave, #popup-lose, #popup-records {
+    width: 85vw !important;
+    border-radius: 10px !important;
+    right: 10px !important;
+    position: relative !important;
+    bottom: 50vh !important;
+  }
+  .img-popup {
+    width: 80vw !important;
+  }
+  #player-hand.split-style-left {
+    left: 10vw !important;
+    gap: 0px !important;
+    position: relative !important;
+  }
+  .split-style-right {
+    position: relative !important;
+    left: -10vw !important;
+    gap: 0px !important;
+  }
+ .deck-image {
+    right: 30px; 
+    top: 60px; 
+ }
+ .record-row {
+    font-size: 0.8em !important;
+  } 
+  #highscores-list {
+    right: 30px !important;   
+    width: 80vw !important;
+  }
+}
 @media (max-width: 1200px) and (max-height: 500px) {                    /* modo landscape */
   h1 {
     font-size: 1.6em !important;
