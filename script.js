@@ -584,6 +584,8 @@ async function finishRound() {
   document.getElementById('stand-button').classList.add('hidden');
   document.getElementById('double-down-button').classList.add('hidden');    
   document.getElementById('next-round-button').classList.remove('hidden');  
+  document.getElementById('leave-the-casino-button').classList.remove('unavailable');
+  unavailableLeaveFlag = false;
   enableBetButtons();
   return;
   }
