@@ -1173,6 +1173,13 @@ document.getElementById('closePopup-records').addEventListener('click', function
   document.getElementById('modal-backdrop-records').style.display = 'none';
 });
 
+// Ping the server every 5 minutes to keep it awake
+fetch('https://blackjackscript-casino-server-records.onrender.com/api/ping');
+
+setInterval(() => {
+  fetch('https://blackjackscript-casino-server-records.onrender.com/api/ping');
+}, 5 * 60 * 1000);
+
 function restart() {
   playerHandTitle.classList.add("empty-title");
   dealerHandTitle.classList.add("empty-title");
