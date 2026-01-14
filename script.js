@@ -1152,6 +1152,12 @@ fetch('https://blackjackscript-casino-server-records.onrender.com/api/records')
   .then(data => {
   const listRecords = document.getElementById('highscores-list');
   listRecords.innerHTML = ''; // Clear previous records
+  if (!data || data.length === 0) {
+    const noRecords = document.createElement('img');
+    noRecords.classList.add('loading-gif');
+    noRecords.src = 'assets/loading.gif';
+    listRecords.appendChild(noRecords);
+  } else {
   data.slice(0, 20).forEach(entry => {
     const record = document.createElement('li');
     record.classList.add('record-row'); 
@@ -1165,6 +1171,7 @@ fetch('https://blackjackscript-casino-server-records.onrender.com/api/records')
     record.appendChild(recordMoney);
     listRecords.appendChild(record);
   });
+  }
 });
   document.getElementById('popup-records').style.display = 'block';
   document.getElementById('modal-backdrop-records').style.display = 'block';
