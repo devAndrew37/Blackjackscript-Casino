@@ -1147,17 +1147,24 @@ document.getElementById('recordButton').addEventListener('click', async function
 });
 
 document.getElementById('showRecords').addEventListener('click', async function() {
-fetch('https://blackjackscript-casino-server-records.onrender.com/api/records')
-  .then(res => res.json())
-  .then(data => {
   const listRecords = document.getElementById('highscores-list');
-  listRecords.innerHTML = ''; // Clear previous records
+  listRecords.innerHTML = '';
   const loading = document.createElement('img');
   loading.classList.add('loading-gif');
   loading.src = 'assets/loading.gif';
   listRecords.appendChild(loading);
+fetch('https://blackjackscript-casino-server-records.onrender.com/api/records')
+  .then(res => res.json())
+  .then(data => {
   if (data) {
   listRecords.removeChild(loading);
+  if (data.length === 0) {
+    const noRecords = document.createElement('li');
+    noRecords.classList.add('no-records');
+    noRecords.innerHTML = 'No records found.';
+    listRecords.appendChild(noRecords);
+    return;
+  }
   data.slice(0, 20).forEach(entry => {
     const record = document.createElement('li');
     record.classList.add('record-row'); 
@@ -1172,7 +1179,14 @@ fetch('https://blackjackscript-casino-server-records.onrender.com/api/records')
     listRecords.appendChild(record);
   });
   }
-});
+})
+ .catch(() => {
+      listRecords.innerHTML = '';
+      const errorMsg = document.createElement('li');
+      errorMsg.classList.add('no-records');
+      errorMsg.textContent = 'Error fetching records. Try again later.';
+      listRecords.appendChild(errorMsg);
+  });
   document.getElementById('popup-records').style.display = 'block';
   document.getElementById('modal-backdrop-records').style.display = 'block';
 });

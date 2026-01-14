@@ -594,6 +594,10 @@ footer a {
   color: inherit;
 }
 
+.no-records {
+  counter-increment: none;
+}
+
 .record-money {
   position: relative;
   text-align: right;
