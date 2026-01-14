@@ -619,8 +619,8 @@ footer a {
 .loading-gif {
   display: block;
   margin: 20px auto;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 @media (max-width: 600px) {                    /* modo portrait */
