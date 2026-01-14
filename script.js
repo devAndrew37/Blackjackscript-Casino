@@ -1152,12 +1152,12 @@ fetch('https://blackjackscript-casino-server-records.onrender.com/api/records')
   .then(data => {
   const listRecords = document.getElementById('highscores-list');
   listRecords.innerHTML = ''; // Clear previous records
-  if (!data || data.length === 0) {
-    const noRecords = document.createElement('img');
-    noRecords.classList.add('loading-gif');
-    noRecords.src = 'assets/loading.gif';
-    listRecords.appendChild(noRecords);
-  } else {
+  const loading = document.createElement('img');
+  loading.classList.add('loading-gif');
+  loading.src = 'assets/loading.gif';
+  listRecords.appendChild(loading);
+  if (data) {
+  listRecords.removeChild(loading);
   data.slice(0, 20).forEach(entry => {
     const record = document.createElement('li');
     record.classList.add('record-row'); 
