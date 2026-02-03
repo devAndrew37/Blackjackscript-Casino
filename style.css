@@ -642,7 +642,7 @@ footer a {
     position: relative !important;
     height: 70vh !important; 
     width: 90vw !important;
-    right: 1vw !important;  
+    right: 0vw !important;  
     transform: translateY(0%) !important;
     margin: 20px 0 6vh 0 !important;
   }
