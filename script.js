@@ -572,7 +572,7 @@ async function finishRound() {
     myMoneyDisplay.innerHTML = `$${myMoney}`;
     document.getElementById('my-money').style.color = 'white';
     }
-  }, 3000);  
+  }, 2000);  
   currentBet.innerHTML = 0; // Reset current bet 
   betAmount = 0; // Reset bet amount    
   youLoseLeftHand = false;
@@ -620,7 +620,7 @@ async function finishRound() {
       moneyWon.innerHTML = '';
       myMoneyDisplay.innerHTML = `$${myMoney}`;
       document.getElementById('my-money').style.color = 'white';
-    }, 3000);  // Clear the bet message after 2 seconds
+    }, 2000);  // Clear the bet message after 2 seconds
     currentBet.innerHTML = 0; // Reset current bet  
     betAmount = 0; // Reset bet amount
 

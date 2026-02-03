@@ -389,6 +389,9 @@ footer a {
   #developer-info {
     margin-right: 20px !important;
   }
+  #return-link {
+    left: 40vw !important;
+ }
  .deck-image {
     right: 15px; 
     top: 50px; 

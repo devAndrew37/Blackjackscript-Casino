@@ -11,68 +11,7 @@
 <body>
  <h1>Blackjackscript Casino</h1>
  <div class="big-container-game">
- <main class="game-main-item">
- <div class="game-table-container">
-  <h3 class="hand-title empty-title">Dealer's Hand</h3>
-    <div class="table-background"></div>
-    <div class="dealer-container">
-      <div id="dealer-hand">
-        <img src="assets/empty-card.png"class="empty-card">
-      </div>
-    </div>
-    <img src="/assets/back.png" alt="deck" width="40" class="deck-image card">
-    <div class="data-container">
-      <p id="dealer-value"></p>
-      <p id="message">Welcome to Blackjackscript Casino!</p>
-      <p id="player-value"></p>
-    </div>
-    <div class="player-container">
-      <div id="player-hand">
-        <img src="assets/empty-card.png"class="empty-card">
-      </div>
-      <div class="player-hand-split hidden" id="phs-2">
-      </div>
-    </div>
-    <h3 class="player-hand-title empty-title">Player's Hand</h3>
-</div>
- <div class="controls">
- <button id="start-button" onclick="start()">Start</button>
- <button id="hit-button" class="hidden">Hit</button>
- <button id="stand-button" class="hidden">Stand</button>
- <button id="double-down-button" class="hidden">Double Down</button>
- <button id="split-button" class="hidden">Split</button>
- <button id="next-round-button" class="hidden" onclick="start()">Next Round</button>
- <button id="restart-button" class="hidden" onclick="restart()">Restart</button>
- </div>
-</main>
-<section class="bets-section-item">
-  <div class="bet-container">
-      <h3>Place Your Bet</h3>
-      <div class="bet-buttons">
-        <button id="bet-button-10" class="bet-button" onclick="addBet(this.value)" value="10">10</button>
-        <button id="bet-button-20" class="bet-button" onclick="addBet(this.value)" value="20">20</button>
-        <button id="bet-button-50" class="bet-button" onclick="addBet(this.value)" value="50">50</button>
-        <button id="bet-button-100" class="bet-button" onclick="addBet(this.value)" value="100">100</button>
-        <button id="bet-button-500" class="bet-button" onclick="addBet(this.value)" value="500">500</button>
-        <button id="bet-button-1000" class="bet-button" onclick="addBet(this.value)" value="1000">1000</button>
-      </div>
-      <p>Current Bet: <span id="current-bet">$0</span></p>
-      <button id="allin-bet-button" onclick="allIn()">All In!</button>
-      <button id="clear-bet-button" onclick="clearBet()">Clear Bet</button>
-    </div>
-</section>
-<section class="my-money-item">
-  <div class="my-money-container">
-      <h3>Your Money</h3>
-      <div class="money-display-container">
-       <p id="money-lost-item" style="color: red;"></p>
-       <p id="my-money-item"><span id="my-money">$2000</span></p>
-       <p id="money-won-item" style="color: #85bb65;"></p>
-      </div>
-</section>
- <button id="leave-the-casino-button">Leave the casino</button>
-</div>
- <div id="modal-backdrop"></div>
+   <div id="modal-backdrop"></div>
  <div id="popup" style="display: none">
   <a id="closePopup">X</a>
   Keyboard Controls 
@@ -118,6 +57,67 @@
    <img src="assets/cero.jpg" alt="perdedor" class="img-popup" id="img-src">
    <button id="restart-button" onclick="restart()">Restart</button>
  </div>
+ <main class="game-main-item">
+ <div class="game-table-container">
+  <h3 class="hand-title empty-title">Dealer's Hand</h3>
+    <div class="table-background"></div>
+    <div class="dealer-container">
+      <div id="dealer-hand">
+        <img src="assets/empty-card.png"class="empty-card">
+      </div>
+    </div>
+    <img src="/assets/back.png" alt="deck" width="40" class="deck-image card">
+    <div class="data-container">
+      <p id="dealer-value"></p>
+      <p id="message">Welcome to Blackjackscript Casino!</p>
+      <p id="player-value"></p>
+    </div>
+    <div class="player-container">
+      <div id="player-hand">
+        <img src="assets/empty-card.png"class="empty-card">
+      </div>
+      <div class="player-hand-split hidden" id="phs-2">
+      </div>
+    </div>
+    <h3 class="player-hand-title empty-title">Player's Hand</h3>
+</div>
+</main>
+ <div class="controls">
+ <button id="start-button" onclick="start()">Start</button>
+ <button id="hit-button" class="hidden">Hit</button>
+ <button id="stand-button" class="hidden">Stand</button>
+ <button id="double-down-button" class="hidden">Double Down</button>
+ <button id="split-button" class="hidden">Split</button>
+ <button id="next-round-button" class="hidden" onclick="start()">Next Round</button>
+ <button id="restart-button" class="hidden" onclick="restart()">Restart</button>
+ </div>
+<section class="bets-section-item">
+  <div class="bet-container">
+      <h3>Place Your Bet</h3>
+      <div class="bet-buttons">
+        <button id="bet-button-10" class="bet-button" onclick="addBet(this.value)" value="10">10</button>
+        <button id="bet-button-20" class="bet-button" onclick="addBet(this.value)" value="20">20</button>
+        <button id="bet-button-50" class="bet-button" onclick="addBet(this.value)" value="50">50</button>
+        <button id="bet-button-100" class="bet-button" onclick="addBet(this.value)" value="100">100</button>
+        <button id="bet-button-500" class="bet-button" onclick="addBet(this.value)" value="500">500</button>
+        <button id="bet-button-1000" class="bet-button" onclick="addBet(this.value)" value="1000">1000</button>
+      </div>
+      <p>Current Bet: <span id="current-bet">$0</span></p>
+      <button id="allin-bet-button" onclick="allIn()">All In!</button>
+      <button id="clear-bet-button" onclick="clearBet()">Clear Bet</button>
+    </div>
+</section>
+<section class="my-money-item">
+  <div class="my-money-container">
+      <h3>Your Money</h3>
+      <div class="money-display-container">
+       <p id="money-lost-item" style="color: red;"></p>
+       <p id="my-money-item"><span id="my-money">$2000</span></p>
+       <p id="money-won-item" style="color: #85bb65;"></p>
+      </div>
+</section>
+ <button id="leave-the-casino-button">Leave the casino</button>
+</div>
 <footer>
   <div style="float: left; margin-left: 20px;">
     <a id="music-icon" onclick="playMusic()" style="cursor: pointer;">🔇</a>
