@@ -1086,7 +1086,7 @@ footer a {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {          /* modo ipad */
+@media (min-height: 768px) and (max-width: 1366px) and (orientation: landscape) {          /* modo ipad */
   h1 {
     font-size: 1.8em !important;
     margin-bottom: 20px !important;
