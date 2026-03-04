@@ -340,7 +340,7 @@ footer a {
 #modal-backdrop {    /*blur effect background when popup*/
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  width: 100vw;
+  width: 120vw;
   height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
@@ -433,7 +433,7 @@ footer a {
 #modal-backdrop-leave {    /*blur effect background when popup*/
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  width: 100vw;
+  width: 120vw;
   height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
@@ -488,7 +488,7 @@ footer a {
 #modal-backdrop-records {    /*blur effect background when popup*/
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  width: 100vw;
+  width: 120vw;
   height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
@@ -537,7 +537,7 @@ footer a {
 #modal-backdrop-lose {    /*blur effect background when popup*/
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  width: 100vw;
+  width: 120vw;
   height: 150vh;
   background: rgba(0,0,0,0.2); /* Optional: darken */
   backdrop-filter: blur(8px);
@@ -887,9 +887,9 @@ footer a {
   #popup-leave, #popup-lose, #popup-records {
     width: 85vw !important;
     border-radius: 10px !important;
-    right: 10px !important;
+    left: 45vw !important;
     position: relative !important;
-    bottom: 50vh !important;
+    top: 900px !important;
   }
   .img-popup {
     width: 80vw !important;
